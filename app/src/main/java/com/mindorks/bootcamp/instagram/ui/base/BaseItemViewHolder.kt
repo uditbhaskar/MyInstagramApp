@@ -19,8 +19,7 @@ import javax.inject.Inject
 
 abstract class BaseItemViewHolder<T : Any, VM : BaseItemViewModel<T>>(
     @LayoutRes layoutId: Int, parent: ViewGroup
-) : RecyclerView.ViewHolder(LayoutInflater.from(parent.context).inflate(layoutId, parent, false)),
-    LifecycleOwner {
+) : RecyclerView.ViewHolder(LayoutInflater.from(parent.context).inflate(layoutId, parent, false)), LifecycleOwner {
 
     init {
         onCreate()

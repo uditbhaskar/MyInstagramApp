@@ -3,7 +3,7 @@ package com.mindorks.bootcamp.instagram.di
 import javax.inject.Qualifier
 
 @Qualifier
-@Retention(AnnotationRetention.SOURCE)
+@Retention(AnnotationRetention.BINARY)
 annotation class ApplicationContext
 
 @Qualifier

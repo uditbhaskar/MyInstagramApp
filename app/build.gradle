@@ -10,6 +10,7 @@ android {
     // user the variables like compile_sdk_version to keep the dependencies same throughout the application
     compileSdkVersion rootProject.ext.compile_sdk_version
 
+
     defaultConfig {
         applicationId "com.mindorks.bootcamp.instagram"
         minSdkVersion rootProject.ext.min_sdk_version

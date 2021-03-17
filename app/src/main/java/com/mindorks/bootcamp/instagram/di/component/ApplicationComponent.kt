@@ -26,7 +26,6 @@ interface ApplicationComponent {
 
     @ApplicationContext
     fun getContext(): Context
-
     /**
      * These methods are written in ApplicationComponent because the instance of
      * NetworkService is singleton and is maintained in the ApplicationComponent's implementation by Dagger
