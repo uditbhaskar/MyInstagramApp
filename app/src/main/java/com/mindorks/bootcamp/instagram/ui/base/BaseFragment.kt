@@ -72,4 +72,6 @@ abstract class BaseFragment<VM : BaseViewModel> : Fragment() {
     protected abstract fun injectDependencies(fragmentComponent: FragmentComponent)
 
     protected abstract fun setupView(view: View)
+
+    protected abstract fun setUpObservers()
 }

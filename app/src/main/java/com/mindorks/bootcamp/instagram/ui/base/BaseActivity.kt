@@ -30,7 +30,7 @@ abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity() {
         viewModel.onCreate()
     }
 
-    private fun buildActivityComponent() =
+    private fun buildActivityComponent() :ActivityComponent =
         DaggerActivityComponent
             .builder()
             .applicationComponent((application as MyInstagramApplication).applicationComponent)

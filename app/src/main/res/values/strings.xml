@@ -9,7 +9,6 @@
     <string name="server_connection_error">Not able to connect, please retry again</string>
     <string name="network_login_again">Please log in again</string>
 
-
     <!--login-->
     <string name="email_field_hint">Enter your email</string>
     <string name="password_field_hint">Enter your password</string>
@@ -18,4 +17,9 @@
     <string name="email_field_invalid">Not a valid email</string>
     <string name="password_field_small_length">Password less than 6 digits</string>
     <string name="login_button_text">Login</string>
+
+    <!--menu-->
+    <string name="menu_home">Home</string>
+    <string name="menu_add_photos">Add Photos</string>
+    <string name="menu_profile">Profile</string>
 </resources>

@@ -4,6 +4,7 @@ import com.mindorks.bootcamp.instagram.di.ActivityScope
 import com.mindorks.bootcamp.instagram.di.module.ActivityModule
 import com.mindorks.bootcamp.instagram.ui.dummy.DummyActivity
 import com.mindorks.bootcamp.instagram.ui.login.LoginActivity
+import com.mindorks.bootcamp.instagram.ui.main.MainActivity
 import com.mindorks.bootcamp.instagram.ui.splash.SplashActivity
 import dagger.Component
 
@@ -19,4 +20,6 @@ interface ActivityComponent {
     fun inject(activity: DummyActivity)
 
     fun inject(activity: LoginActivity)
+
+    fun inject(activity:MainActivity)
 }
