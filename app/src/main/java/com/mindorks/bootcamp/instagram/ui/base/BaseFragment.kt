@@ -73,5 +73,4 @@ abstract class BaseFragment<VM : BaseViewModel> : Fragment() {
 
     protected abstract fun setupView(view: View)
 
-    protected abstract fun setUpObservers()
 }

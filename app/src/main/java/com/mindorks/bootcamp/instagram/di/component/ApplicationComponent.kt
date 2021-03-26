@@ -52,7 +52,7 @@ interface ApplicationComponent {
      * So, Dagger will be able to create an instance of UserRepository by its own using constructor injection
      *---------------------------------------------------------------------------------
      */
-    fun getUserRepository(): UserRepository
+    fun getUserRepository(): UserRepository //It's scope is singleton hence provided by Application component with same scope as singleton
 
     fun getSchedulerProvider(): SchedulerProvider
 

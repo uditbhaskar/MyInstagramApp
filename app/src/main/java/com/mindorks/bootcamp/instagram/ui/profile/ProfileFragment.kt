@@ -32,7 +32,5 @@ class ProfileFragment : BaseFragment<ProfileViewModel>() {
 
     }
 
-    override fun setUpObservers() {
-        super.setupObservers()
-    }
+
 }

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Instagram Project</string>
+    <string name="app_name">My Instagram</string>
 
     <string name="network_connection_error">Internet connection lost, please retry again</string>
     <string name="network_default_error">Something wrong happened, please retry again</string>
@@ -22,4 +22,7 @@
     <string name="menu_home">Home</string>
     <string name="menu_add_photos">Add Photos</string>
     <string name="menu_profile">Profile</string>
+
+    <!--posts-->
+    <string name="post_like_label">%1d Likes</string>
 </resources>

@@ -47,7 +47,5 @@ class DummiesFragment : BaseFragment<DummiesViewModel>() {
         rv_dummy.adapter = dummiesAdapter
     }
 
-    override fun setUpObservers() {
-    }
 
 }

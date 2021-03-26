@@ -30,7 +30,5 @@ class PhotoFragment :BaseFragment<PhotoViewModel>() {
 
     }
 
-    override fun setUpObservers() {
-        super.setupObservers()
-    }
+
 }

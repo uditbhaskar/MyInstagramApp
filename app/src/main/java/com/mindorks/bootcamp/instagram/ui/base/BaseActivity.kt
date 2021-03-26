@@ -65,4 +65,6 @@ abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity() {
     protected abstract fun injectDependencies(activityComponent: ActivityComponent)
 
     protected abstract fun setupView(savedInstanceState: Bundle?)
+
+
 }

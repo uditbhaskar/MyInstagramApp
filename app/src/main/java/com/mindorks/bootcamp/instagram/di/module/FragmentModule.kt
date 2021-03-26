@@ -2,11 +2,15 @@ package com.mindorks.bootcamp.instagram.di.module
 
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.mindorks.bootcamp.instagram.data.model.Post
 import com.mindorks.bootcamp.instagram.data.repository.DummyRepository
+import com.mindorks.bootcamp.instagram.data.repository.PostRepository
+import com.mindorks.bootcamp.instagram.data.repository.UserRepository
 import com.mindorks.bootcamp.instagram.ui.base.BaseFragment
 import com.mindorks.bootcamp.instagram.ui.dummies.DummiesAdapter
 import com.mindorks.bootcamp.instagram.ui.dummies.DummiesViewModel
 import com.mindorks.bootcamp.instagram.ui.home.HomeViewModel
+import com.mindorks.bootcamp.instagram.ui.home.post.PostAdapter
 import com.mindorks.bootcamp.instagram.ui.photo.PhotoViewModel
 import com.mindorks.bootcamp.instagram.ui.profile.ProfileViewModel
 import com.mindorks.bootcamp.instagram.utils.ViewModelProviderFactory
@@ -15,6 +19,7 @@ import com.mindorks.bootcamp.instagram.utils.rx.SchedulerProvider
 import dagger.Module
 import dagger.Provides
 import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.processors.PublishProcessor
 
 @Module
 class FragmentModule(private val fragment: BaseFragment<*>) {
@@ -38,14 +43,21 @@ class FragmentModule(private val fragment: BaseFragment<*>) {
     fun provideDummiesAdapter() = DummiesAdapter(fragment.lifecycle, ArrayList())
 
     @Provides
+    fun providePostsAdapter() = PostAdapter(fragment.lifecycle, ArrayList())
+
+    @Provides
     fun provideHomeViewModel(
             schedulerProvider: SchedulerProvider,
             compositeDisposable: CompositeDisposable,
-            networkHelper: NetworkHelper
-    ): HomeViewModel = ViewModelProviders.of(fragment,
-            ViewModelProviderFactory(HomeViewModel::class) {
-                HomeViewModel(schedulerProvider, compositeDisposable, networkHelper)
-            }
+            networkHelper: NetworkHelper,
+            userRepository: UserRepository,
+            postRepository: PostRepository
+    ): HomeViewModel = ViewModelProviders.of(
+            fragment, ViewModelProviderFactory(HomeViewModel::class) {
+        HomeViewModel(schedulerProvider, compositeDisposable, networkHelper, userRepository,
+                postRepository, ArrayList<Post>(), PublishProcessor.create()
+        )
+    }
     ).get(HomeViewModel::class.java)
 
     @Provides

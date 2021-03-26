@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mindorks.bootcamp.instagram.data.repository.DummyRepository
 import com.mindorks.bootcamp.instagram.data.repository.UserRepository
+import com.mindorks.bootcamp.instagram.di.ActivityScope
 import com.mindorks.bootcamp.instagram.ui.base.BaseActivity
 import com.mindorks.bootcamp.instagram.ui.dummy.DummyViewModel
 import com.mindorks.bootcamp.instagram.ui.login.LoginViewModel
@@ -25,6 +26,7 @@ import io.reactivex.disposables.CompositeDisposable
 @Module
 class ActivityModule(private val activity: BaseActivity<*>) {
 
+    @ActivityScope
     @Provides
     fun provideLinearLayoutManager(): LinearLayoutManager = LinearLayoutManager(activity)
 
