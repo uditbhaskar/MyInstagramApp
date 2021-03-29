@@ -27,5 +27,8 @@ class MyInstagramApplication : Application() {
         this.applicationComponent = applicationComponent
     }
 
+    fun x(){
+
+    }
 
 }
